@@ -26,8 +26,10 @@
 
 <div align="center">
 
-| Requirement | Recommended | Logo |
-|----------------------|--------------------------------------|----------------------------------------------------------con-1788C.png" width="20"> |
+| Requirement   | Recommended        | Logo                                                                                   |
+| ------------- | ------------------ | -------------------------------------------------------------------------------------- |
+| **Neovim**    | v0.9.0+            | <img src="https://neovim.io/logos/neovim-mark-flat.png" width="20">                    |
+| **Git**       | Latest             | <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" width="20">   |
 | **Nerd Font** | FiraCode Nerd Font | <img src="https://www.nerdfonts.com/assets/img/sankey-glyphs.1ecab02e.png" width="20"> |
 
 </div>
@@ -133,41 +135,3 @@ MIT License © 2023 Anurag
   <img src="https://media.giphy.com/media/jpVnC65DmYeyRL4LHS/giphy.gif" width="100">
 </p>
 ```
-
-### Key Improvements:
-
-1. **Visual Hierarchy**:
-
-   - Added proper icons and logos for each section
-   - Organized content into clear, visually distinct sections
-
-2. **Enhanced Tables**:
-
-   - Added icon columns to key binding tables
-   - Created comparison tables for features and plugins
-
-3. **Visual Elements**:
-
-   - Added animated GIFs for fun
-   - Included proper badges for versioning
-   - Used emojis as visual cues
-
-4. **Structure**:
-
-   - Clear section separation with icons
-   - Better organization of plugin categories
-   - Visual directory tree
-
-5. **Branding**:
-   - Consistent use of Neovim logo
-   - Proper attribution for all technologies
-
-To use this README:
-
-1. Replace placeholder image URLs with your actual screenshots
-2. Update the GitHub repository URL
-3. Add any additional plugins you want to highlight
-4. Customize the GIFs to match your personality
-
-| **Neovim** | v0.9.0+ | <img src="https://neovim.io/logos/neovim-mark-flat.png" width="20"> |
-| **Git** | Latest | <img src="https://git-scm.com/images/logos/downloads/Git-I
