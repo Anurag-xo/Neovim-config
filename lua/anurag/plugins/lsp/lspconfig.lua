@@ -232,14 +232,42 @@ return {
             },
           })
         end,
+        -- ["jdtls"] = function()
+        --   lspconfig["jdtls"].setup({
+        --     capabilities = capabilities,
+        --     filetypes = { "java" },
+        --     root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git"),
+        --     settings = {
+        --       java = {
+        --         format = {
+        --           settings = {
+        --             url = vim.fn.stdpath("config") .. "/data/java-formatter.xml",
+        --             profile = "GoogleStyle",
+        --           },
+        --         },
+        --       },
+        --     },
+        --   })
+        -- end,
         ["jdtls"] = function()
+          local path_to_jdtls = require("mason-registry").get_package("jdtls"):get_install_path()
+
           lspconfig["jdtls"].setup({
             capabilities = capabilities,
             filetypes = { "java" },
             root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git"),
+            cmd = {
+              path_to_jdtls .. "/bin/jdt-language-server",
+              "-data",
+              vim.fn.expand("~/.cache/jdtls-workspace"),
+            },
+            init_options = {
+              bundles = {},
+            },
             settings = {
               java = {
                 format = {
+                  enabled = true,
                   settings = {
                     url = vim.fn.stdpath("config") .. "/data/java-formatter.xml",
                     profile = "GoogleStyle",
