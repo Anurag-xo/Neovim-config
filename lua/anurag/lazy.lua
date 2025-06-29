@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "anurag.plugins" }, { import = "anurag.plugins.lsp" } }, {
+require("lazy").setup({ { import = "anurag.plugins" }, { import = "anurag.plugins.lsp" }, { import = "anurag.plugins.dap" } }, {
   checker = {
     enabled = true,
     notify = false,

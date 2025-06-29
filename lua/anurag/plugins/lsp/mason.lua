@@ -39,6 +39,7 @@ return {
         "emmet_ls", -- Emmet LSP
         "prismals", -- Prisma LSP
         "pyright", -- Python LSP
+        "ts_ls", -- TypeScript LSP
       },
     })
 
