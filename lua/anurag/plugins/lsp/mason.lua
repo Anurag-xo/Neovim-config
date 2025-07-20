@@ -52,6 +52,7 @@ return {
         "eslint_d", -- JavaScript/TypeScript linter
         "clang-format", -- C/C++ formatter
         "codelldb", -- C/C++/Rust debug adapter
+        "jdtls", -- Java LSP
       },
     })
   end,

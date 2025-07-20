@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
+  event = { "FileType java" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
@@ -95,34 +95,19 @@ return {
             },
           })
         end,
-        -- ["jdtls"] = function()
-        --   lspconfig["jdtls"].setup({
-        --     capabilities = capabilities,
-        --     filetypes = { "java" },
-        --     root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git"),
-        --     settings = {
-        --       java = {
-        --         format = {
-        --           settings = {
-        --             url = vim.fn.stdpath("config") .. "/data/java-formatter.xml",
-        --             profile = "GoogleStyle",
-        --           },
-        --         },
-        --       },
-        --     },
-        --   })
-        -- end,
         ["jdtls"] = function()
+          local root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git")
+          local workspace_dir = vim.fn.fnamemodify(root_dir, ":p:h:t")
           local path_to_jdtls = require("mason-registry").get_package("jdtls"):get_install_path()
 
           lspconfig["jdtls"].setup({
             capabilities = capabilities,
             filetypes = { "java" },
-            root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git"),
+            root_dir = root_dir,
             cmd = {
               path_to_jdtls .. "/bin/jdt-language-server",
               "-data",
-              vim.fn.expand("~/.cache/jdtls-workspace"),
+              vim.fn.stdpath("data") .. "/jdtls-workspace/" .. workspace_dir,
             },
             init_options = {
               bundles = {},
