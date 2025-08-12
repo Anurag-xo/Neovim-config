@@ -1,4 +1,4 @@
 return {
   "wakatime/vim-wakatime",
-  event = "VeryLazy",
+  lazy = false, -- Important: Must be false to load immediately
 }
